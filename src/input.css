@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+body {
+  background-color: #E7F6F2;
+  font-family: Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  padding-top: 55px; /* Tinggi header + tambahan jarak */
+}
+
+header {
+  background-color: #395B64;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Contoh: penambahan shadow pada header */
+}
+
+header h1 {
+  margin: 0;
+  color: #ffffff;
+}
+
+h1 {
+  display: inline-block;
+}
+
+h1 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav {
+  padding: 10px;
+}
+
+nav a {
+  margin-left: 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+nav.right {
+  margin-left: auto;
+}
+
+#map {
+  height: 400px;
+}
+
+table {
+  margin-top: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th,
+table td {
+  border: 1px solid #ffffff;
+  padding: 8px;
+  color: #ffffff;
+}
+
+table th {
+  background-color: #2C3333;
+}
