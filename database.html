@@ -1,67 +1,164 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Pemetaan PT-SMI</title>
-  <link rel="stylesheet" href="/dist/output.css"/>
-  <!-- Tambahkan pustaka Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body class="dark:bg-gray-900 antialiased">
-  <header class="font-sans top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800">
-    <h1 class="text-3xl font-bold text-white"><a href="index.html">Database Perseroan Terbatas di Kota Sukabumi</a></h1>
-    <nav class="right font-sans">
-      <a href="database.html" class="inline-block bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"><i class="fas fa-database mr-2"></i>Database</a>
-      <a href="about.html" class="inline-block bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"><i class="fas fa-info-circle mr-2"></i>About</a>
-    </nav>
-  </header> 
-  
-  <form class="mt-16 mx-4">
-    <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
-    <div class="relative">
-        <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-            <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+  <head>
+    <title>Pemetaan PT-SMI</title>
+    <link rel="stylesheet" href="/dist/output.css" />
+    <!-- Tambahkan pustaka Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="dark:bg-gray-900 antialiased">
+    <header
+      class="font-sans top-0 z-40 flex-none w-full mx-auto bg-white border-b border-gray-200 dark:border-gray-600 dark:bg-gray-800"
+    >
+      <h1 class="text-3xl font-bold text-white">
+        <a href="index.html">Database Perseroan Terbatas di Kota Sukabumi</a>
+      </h1>
+      <nav class="right font-sans">
+        <a
+          href="database.html"
+          class="inline-block bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+          ><i class="fas fa-database mr-2"></i>Database</a
+        >
+        <a
+          href="about.html"
+          class="inline-block bg-sky-500 hover:bg-sky-700 text-white font-bold py-2 px-4 rounded"
+          ><i class="fas fa-info-circle mr-2"></i>About</a
+        >
+      </nav>
+    </header>
+
+    <form class="mt-16 mx-4">
+      <label
+        for="default-search"
+        class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+        >Search</label
+      >
+      <div class="relative">
+        <div
+          class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none"
+        >
+          <svg
+            aria-hidden="true"
+            class="w-5 h-5 text-gray-500 dark:text-gray-400"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+            ></path>
+          </svg>
         </div>
-        <input type="search" id="default-search" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Ketikan kata kunci dari data yang ingin dicari" required>
-        <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
-    </div>
-  </form>
+        <input
+          type="search"
+          id="default-search"
+          class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="Ketikan kata kunci dari data yang ingin dicari"
+          required
+        />
+        <button
+          type="submit"
+          class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Search
+        </button>
+      </div>
+    </form>
 
-  <main class="mx-4">
-    <!-- Tambahkan tabel untuk menampilkan data -->
-    <div class="overflow-x-auto">
-      <table id="data-table" class="font-sans rounded-lg w-full text-sm text-center text-gray-500 dark:text-gray-400">
-        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Nama PT</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Alamat PT</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Latitude</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Longitude</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Bidang</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">No. Telpon</th>
-            <th class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white">Link</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Tambahkan baris data di sini -->
-        </tbody>
-      </table>  
-    </div>
-  </main>
-  <script src="data.js"></script>
-  <script src="search.js"></script>
-</body>
+    <main class="mx-4">
+      <!-- Tambahkan tabel untuk menampilkan data -->
+      <div class="overflow-x-auto">
+        <table
+          id="data-table"
+          class="font-sans rounded-lg w-full text-sm text-center text-gray-500 dark:text-gray-400"
+        >
+          <thead
+            class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+          >
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Nama PT
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Alamat PT
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Latitude
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Longitude
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Bidang
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                No. Telpon
+              </th>
+              <th
+                class="px-4 py-2 font-medium dark:bg-gray-800 text-gray-900 whitespace-nowrap dark:text-white"
+              >
+                Link
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Tambahkan baris data di sini -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <script src="data.js"></script>
+    <script src="search.js"></script>
+  </body>
 
-  <div class="fixed z-50 flex items-center justify-center w-12 h-12 bg-white border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600 left-0 top-1/2 transform -translate-y-1/2">
-    <a href="index.html" data-tooltip-target="tooltip-home" class="inline-flex items-center justify-center p-3 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 group">
-      <svg class="w-6 h-6 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
+  <div
+    class="fixed z-50 flex items-center justify-center w-12 h-12 bg-white border border-gray-200 rounded-full dark:bg-gray-700 dark:border-gray-600 left-0 top-1/2 transform -translate-y-1/2"
+  >
+    <a
+      href="index.html"
+      data-tooltip-target="tooltip-home"
+      class="inline-flex items-center justify-center p-3 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 group"
+    >
+      <svg
+        class="w-6 h-6 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-hidden="true"
+      >
+        <path
+          d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"
+        ></path>
       </svg>
       <span class="sr-only">Home</span>
     </a>
-    <div id="tooltip-home" role="tooltip" class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700">
+    <div
+      id="tooltip-home"
+      role="tooltip"
+      class="absolute z-10 invisible inline-block px-3 py-2 text-sm font-medium text-white transition-opacity duration-300 bg-gray-900 rounded-lg shadow-sm opacity-0 tooltip dark:bg-gray-700"
+    >
       Home
       <div class="tooltip-arrow" data-popper-arrow></div>
     </div>
   </div>
-
 </html>
